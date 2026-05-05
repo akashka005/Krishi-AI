@@ -1,0 +1,104 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-200: #bbf7d0;
+  --color-primary-300: #86efac;
+  --color-primary-400: #4ade80;
+  --color-primary-500: #22c55e;
+  --color-primary-600: #16a34a;
+  --color-primary-700: #15803d;
+  --color-primary-800: #166534;
+  --color-primary-900: #14532d;
+  --color-earth-50: #fdf8f6;
+  --color-earth-100: #f2e8e5;
+  --color-earth-200: #eaddd7;
+  --color-earth-300: #d4b8ac;
+  --color-earth-400: #b58d7c;
+  --color-earth-500: #936653;
+  --color-earth-600: #7a503f;
+  --color-earth-700: #623d2f;
+  --color-earth-800: #2d1d1a;
+  --color-earth-900: #1a1210;
+  --color-silicon-50: #f8fafc;
+  --color-silicon-500: #64748b;
+  --color-silicon-900: #0f172a;
+  --color-harvest-400: #fbbf24;
+  --color-harvest-500: #f59e0b;
+  --color-harvest-600: #d97706;
+}
+
+@layer base {
+
+  body {
+    @apply bg-[#fdf8f6] text-earth-800 font-sans antialiased selection:bg-primary-200 selection:text-primary-900;
+    margin: 0;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(34, 197, 94, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)];
+  }
+  
+  .glass-sidebar {
+    @apply bg-white/40 backdrop-blur-2xl border-r border-earth-100/50 shadow-2xl;
+  }
+
+  .neural-border {
+    position: relative;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(90deg, var(--color-primary-400), var(--color-harvest-400), var(--color-primary-400)) border-box;
+    border: 1px solid transparent;
+    background-size: 200% 100%;
+    animation: border-trace 3s linear infinite;
+  }
+
+  @keyframes border-trace {
+    to { background-position: 200% center; }
+  }
+
+  .text-shimmer {
+    background: linear-gradient(to right, #16a34a, #d97706, #16a34a);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
+  }
+
+  @keyframes shimmer {
+    to { background-position: 200% center; }
+  }
+
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .prose-earth {
+    --tw-prose-body: var(--color-earth-700);
+    --tw-prose-headings: var(--color-earth-800);
+    --tw-prose-links: var(--color-primary-600);
+    --tw-prose-bold: var(--color-earth-900);
+    --tw-prose-quotes: var(--color-earth-600);
+    --tw-prose-quote-borders: var(--color-primary-300);
+  }
+}
