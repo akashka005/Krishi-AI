@@ -59,10 +59,3 @@ npm run dev
 *The dashboard features a fluid glassmorphic interface with real-time stats and a responsive neural chat engine.*
 
 ---
-
-## 📄 License
-This project is licensed under the MIT License.
-
----
-
-**Developed with ❤️ for the future of farming.**
