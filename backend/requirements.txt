@@ -7,3 +7,4 @@ passlib
 python-multipart
 python-dotenv
 gunicorn
+groq
