@@ -5,3 +5,5 @@ pydantic
 PyJWT
 passlib
 python-multipart
+python-dotenv
+gunicorn

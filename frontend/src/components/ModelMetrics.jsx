@@ -6,7 +6,7 @@ export default function ModelMetrics() {
   const [metrics, setMetrics] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/v1/metrics/')
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/v1/metrics/`)
       .then(res => res.json())
       .then(data => setMetrics(data))
       .catch(err => console.error("Error fetching metrics:", err));

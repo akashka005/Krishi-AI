@@ -29,7 +29,7 @@ export default function Dashboard({ user, setUser }) {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await fetch('http://localhost:8000/api/v1/usage/stats');
+        const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/v1/usage/stats`);
         const data = await res.json();
         if (res.ok) {
           setTier(data.tier);
@@ -109,7 +109,7 @@ export default function Dashboard({ user, setUser }) {
     setHistory(updatedHistory);
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/chat/', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/v1/chat/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: text })

@@ -41,7 +41,7 @@ export default function UpgradeModal({ isOpen, onClose }) {
 
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`http://localhost:8000/api/v1/usage/upgrade?tier=${selectedPlan.name}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/v1/usage/upgrade?tier=${selectedPlan.name}`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });
