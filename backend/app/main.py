@@ -6,9 +6,7 @@ load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "..", ".env"))
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1.router import api_router
-from app.config.db import engine, Base
 
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Smart Farmer AI")
 
