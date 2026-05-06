@@ -11,4 +11,6 @@ groq
 langchain
 langchain-community
 faiss-cpu
-sentence-transformers
+sentence-transformers
+pandas
+
