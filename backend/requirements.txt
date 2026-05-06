@@ -8,3 +8,7 @@ python-multipart
 python-dotenv
 gunicorn
 groq
+langchain
+langchain-community
+faiss-cpu
+sentence-transformers
